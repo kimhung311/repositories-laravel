@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->text('details');
             $table->string('client');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
             $table->boolean('is_fulfilled')->default(false);
             $table->timestamps();
         });

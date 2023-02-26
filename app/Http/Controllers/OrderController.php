@@ -29,7 +29,6 @@ class OrderController extends Controller
     public function index()
     {
         $data = $this->orderRepository->getAll();
-        dd($data);
         return view('home.home', compact('data'));
     }
 
